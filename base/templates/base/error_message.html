@@ -1,0 +1,38 @@
+<style>
+    .error-messages {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: rgb(176, 0, 0);
+        width: 340px;
+        height: 40px;
+        color: #fff;
+        border-radius: 15px;
+        margin-right: 20px;
+        margin-top: 20px;
+        padding-top: 20px;
+        font-weight: 700;
+        overflow-y: auto;
+    }
+
+    .error-messages>li {
+        padding-bottom: 20px;
+    }
+
+    .display {
+        display: none;
+    }
+</style>
+
+<ul {% if messages %} class="error-messages messages" {% else %} class="error-messages messages display" {% endif%}>
+    {% for message in messages %}
+    <li>{{message}}</li>
+    {% endfor %}
+</ul>
+
+<script>
+    ul = document.querySelector('ul')
+    setTimeout(() => {
+        ul.classList.add('display')
+    }, 3600)
+</script>

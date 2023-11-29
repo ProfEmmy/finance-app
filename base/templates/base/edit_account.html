@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'styles/edit_account.css' %}">
+
+<div class="edit-account-container">
+    <form method="POST" action="" id="edit-account-form">
+        {% csrf_token %}
+        <div class="input-div">
+            <label for="account_name">Account Name:</label>
+            <br>
+            <input type="text" class="account_name_input" name="account_name_" value="{{account.account_name}}"
+                required>
+        </div>
+
+        <div class="input-div">
+            <label for="account_number">Account Number</label>
+            <br>
+            <input type="text" class="account_number_input" name="account_number_" value="{{account.account_number}}"
+                readonly>
+        </div>
+
+        <div class="btn-div">
+            <a href="{% url 'home' %}">
+                <input type="button" value="Go back" class="go-back-btn">
+            </a>
+            <input type="submit" value="Submit" class="submit-btn">
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'styles/transfer_page.css' %}">
+
+<div class="transfer-form-div">
+    <form method="POST" action="" id="transfer-form">
+        {% csrf_token %}
+        <label for="receiver_account_number">Account Number</label><br>
+        <input type="text" id="receiver_account_number" name="receiverAccountNumber" placeholder="2341098784"
+            required><br><br>
+
+        <label for="amount_to_send">Amount</label><br>
+        <input type="text" id="amount_to_send" name="amount" placeholder="1000.00" required><br><br>
+
+        <div class="confirm-div">
+            <a href="{% url 'home' %}" class="back-link">Go back</a>
+            <input type="submit" value="Send" class="send-btn">
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

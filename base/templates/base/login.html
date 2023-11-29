@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/login-styles.css' %}">
+
+    <title>Login</title>
+</head>
+
+<body>
+    <main>
+        <div class="login-div">
+            <div class="login-innerdiv">
+                <h1 class="login-heading">Login</h1>
+                <form action="" method="POST" class="login-form">
+                    {% csrf_token %}
+                    <div>
+                        <label for="username">Username</label>
+                        <br>
+                        <input type="text" name="username" id="username" class="login-form-input" required>
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <br>
+                        <input type="password" name="password" id="password" class="login-form-input" required>
+                    </div>
+                    <input type="submit" value="Login" class="login-btn">
+                </form>
+                <p class="redirect-text">Don't have an account? <a href="{% url 'register' %}">Register</a>.</p>
+            </div>
+        </div>
+        <img src="{% static 'images/opay_image4.jpg' %}" alt="" class="main-img">
+    </main>
+
+    {% include 'base/error_message.html' %}
+</body>
+
+</html>

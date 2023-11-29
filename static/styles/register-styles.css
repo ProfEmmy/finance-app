@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+body {
+    background-color: aquamarine;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 55% 45%;
+}
+
+.main-img {
+    width: 100%;
+    height: 100vh;
+}
+
+.register-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.register-innerdiv {
+    display: grid;
+    justify-items: center;
+}
+
+.register-heading {
+    font-weight: 900;
+    color: hsl(0, 0%, 0%, .7);
+    margin-bottom: 30px;
+}
+
+.register-form {
+    display: grid;
+    justify-items: center;
+}
+
+.register-form-div>input {
+    width: 320px;
+    height: 55px;
+    border: 0;
+    border-radius: 5px;
+    padding-left: 15px;
+}
+
+.register-form-input:focus {
+    border: 0;
+}
+
+.register-form label {
+    color: hsl(0, 0%, 0%, .4);
+    font-weight: 500;
+}
+
+.register-form>div {
+    margin-bottom: 10px;
+}
+
+.register-btn {
+    width: 100px;
+    height: 45px;
+    border: 0;
+    background-color: rgb(0, 71, 48);
+    border-radius: 7px;
+    color: #fff;
+    margin-top: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.register-btn:hover {
+    background-color: rgb(0, 36, 25);
+}
+
+.redirect-text {
+    font-weight: 800;
+    color: hsl(0, 0%, 0%, .6);
+    margin-top: 30px;
+}
+
+.redirect-text>a {
+    font-weight: 900;
+    color: hsl(0, 0%, 0%, .8);
+    text-decoration: none;
+}

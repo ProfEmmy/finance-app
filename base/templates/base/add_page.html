@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'styles/add_page.css' %}">
+
+<a href="{% url 'home' %}" class="go-back-link">
+    <img src="{% static 'images/arrow-left-solid.svg' %}" alt="">
+</a>
+
+<div class="account-number-div">
+    <div class="account-number-innerdiv">
+        <input type="text" value="{{account.account_number}}" class="account-number-display" readonly>
+        <img src="{% static 'images/copy-regular.svg' %}" alt="copy icon" class="copy-icon">
+    </div>
+</div>
+
+<script>
+    const copy_icon = document.querySelector(".copy-icon")
+    const account_number = document.querySelector(".account-number-display")
+
+    copy_icon.addEventListener("click", e => {
+        navigator.clipboard.writeText(account_number.value)
+        e.target.src = "{% static 'images/check-solid.svg' %}"
+    })
+</script>
+
+{% endblock content %}

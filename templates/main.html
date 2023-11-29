@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opay</title>
+
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+</head>
+
+<body>
+    <main>
+        <div class="home-container">
+            <div class="account-info-div">
+                <div class="account-info-innerdiv">
+                    <div class="head">
+                        <p class="salutation-txt">Hello {{account.account_name}} 👋</p>
+                        <img src="{% static 'images/user-regular.svg' %}" alt="" class="profile-img">
+                    </div>
+                    <div class="dropdown display">
+                        <div class="dropdown-div">
+                            <div class="dropdown-innerdiv">
+                                <a href="{% url 'edit-account' %}">Edit Account</a>
+                                <a href="{% url 'change-password' %}">Change Password</a>
+                            </div>
+                            <div class="logout-div">
+                                <hr>
+                                <a href="{% url 'logout' %}" class="logout-link">logout</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="balance-div">
+                        <small class="balance-label">balance:</small>
+                        <div class="balance-innerdiv">
+                            <h3 class="balance" id="balance">₦{{account.balance}}</h3>
+                            <img src="{% static 'images/eye-solid.svg' %}" alt="" class="view-icon" id="view-icon">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </main>
+
+    {% include 'base/error_message.html' %}
+</body>
+
+<script>
+    const balance_txt = document.querySelector("#balance")
+    const view_icon = document.querySelector("#view-icon")
+
+    const profile_icon = document.querySelector(".profile-img")
+    const dropdown = document.querySelector('.dropdown')
+
+    view_icon.addEventListener("click", e => {
+        unviewed = balance_txt.textContent == "₦xxxx.xx"
+        console.log(unviewed)
+        balance_txt.innerText = unviewed ? view() : unview()
+        console.log(balance_txt.innerText)
+    })
+
+    function view() {
+        view_icon.src = "{% static 'images/eye-solid.svg' %}"
+        return balance_txt.textContent = "₦{{account.balance}}"
+    }
+
+    function unview() {
+        view_icon.src = "{% static 'images/eye-slash-solid.svg' %}"
+        return balance_txt.textContent = "₦xxxx.xx"
+    }
+
+    profile_icon.addEventListener('click', () => {
+        dropdown.classList.toggle('display')
+    })
+</script>
+
+</html>

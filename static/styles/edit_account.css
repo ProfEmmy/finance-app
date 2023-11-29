@@ -1,0 +1,38 @@
+.edit-account-container {
+    display: flex;
+    justify-content: center;
+}
+
+#edit-account-form {
+    margin-top: 50px;
+    width: 85%;
+}
+
+.input-div {
+    margin-bottom: 30px;
+}
+
+.input-div>input {
+    width: 240px;
+    height: 35px;
+    padding-left: 10px;
+    font-size: .99em;
+}
+
+.btn-div input {
+    width: 120px;
+    height: 40px;
+    border: 0;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.go-back-btn {
+    margin-right: 10px;
+    background-color: red;
+}
+
+.submit-btn {
+    background-color: green;
+}

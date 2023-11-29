@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/register-styles.css' %}">
+
+    <title>Register</title>
+</head>
+
+<body>
+    <main>
+        <img src="{% static 'images/opay_image2-fotor-bg-remover-2023102331232.png' %}" alt="" class="main-img">
+        <div class="register-div">
+            <div class="register-innerdiv">
+                <h1 class="register-heading">Register</h1>
+                <form action="" method='POST' class="register-form">
+                    {% csrf_token %}
+
+                    {% for field in form %}
+                    <div class="register-form-div">
+                        <label for="username">{{field.label}}</label>
+                        <br>
+                        {{field}}
+                    </div>
+                    {% endfor %}
+                    <input type="submit" value="Register" class="register-btn">
+                </form>
+                <p class="redirect-text">Already have an account? <a href="{% url 'login' %}">Login</a>.</p>
+            </div>
+        </div>
+    </main>
+
+    {% include 'base/error_message.html' %}
+</body>
+
+</html>

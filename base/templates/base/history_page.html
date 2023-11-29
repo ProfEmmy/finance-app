@@ -1,0 +1,76 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'styles/history_page.css' %}">
+
+<div class="history-div">
+    <div class="history-innerdiv">
+        <a href="{% url 'home' %}" class="go-back-link">
+            <img src="{% static 'images/arrow-left-solid.svg' %}" alt="">
+        </a>
+        <div class="search-container">
+            <form action="{% url 'transaction-history' %}" id="search-form">
+                {% csrf_token %}
+                <input type="text" class="search-input" name="q" placeholder="Search transaction...">
+            </form>
+
+            <div class="filter-buttons-container">
+                <a href="{% url 'transaction-history' %}?q=lastweek">
+                    <div>Last Week</div>
+                </a>
+                <a href="{% url 'transaction-history' %}?q=lastmonth">
+                    <div>Last Month</div>
+                </a>
+                <a href="{% url 'transaction-history' %}?q=lastyear">
+                    <div>Last Year</div>
+                </a>
+            </div>
+
+            <form method="POST" action="" id="date-search-form">
+                {% csrf_token %}
+                <div class="start-date-div">
+                    <label for="">Start Date:</label>
+                    <br>
+                    <input type="text" name="startdate" placeholder="{{current_year}}-{{current_month}}-{{past_day}}"
+                        class="date-search start-date">
+                </div>
+
+                <div class="end-date-div">
+                    <label for="">End Date:</label>
+                    <br>
+                    <input type="text" name="enddate" placeholder="{{current_year}}-{{current_month}}-{{current_day}}"
+                        class="date-search end-date">
+                </div>
+
+                <input type="submit" value="Search" class="date-search-btn">
+            </form>
+        </div>
+        <div class="transactions-container">
+            {% for action in actions %}
+            {% if action.account.user == request.user %}
+            <div class="transaction">
+                <small class="transaction_created">{{action.created}}</small>
+                <h3 class="transaction">{{action.amount}} {{action.transaction_type}}ed to
+                    {{action.receiver_account}}</h3>
+                <hr>
+            </div>
+            {% endif %}
+
+            {% if action.receiver_account.user == request.user %}
+            <div class="transaction">
+                <small class="transaction_created">{{action.created}}</small>
+                <h3 class="transaction">{{action.amount}} received from
+                    {{action.account}}</h3>
+                <hr>
+            </div>
+            {% endif %}
+
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
