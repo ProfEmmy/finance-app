@@ -1,0 +1,75 @@
+.finance-div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 35px;
+}
+
+.finance-innerdiv {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 85%;
+    margin-top: 20px;
+}
+
+.finance-innerdiv>a>button {
+    background-color: black;
+    color: #fff;
+    font-size: 100%;
+    width: 80px;
+    height: 85px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.finance-innerdiv>a>button>img {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(49deg) brightness(103%) contrast(103%);
+    width: 50px;
+}
+
+.add-link {
+    justify-self: left;
+}
+
+.transfer-link {
+    justify-self: center;
+}
+
+.withdraw-link {
+    justify-self: right;
+}
+
+.account-history-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.account-history-innerdiv {
+    width: 85%;
+}
+
+.history-header-div {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-bottom: 15px;
+}
+
+.history-header {
+    margin: 0;
+}
+
+.all-history-link {
+    justify-self: right;
+}
+
+.transaction_created {
+    font-size: .7em;
+}
+
+.transaction {
+    font-size: .9em;
+    font-weight: 700;
+    margin-top: 7px;
+}

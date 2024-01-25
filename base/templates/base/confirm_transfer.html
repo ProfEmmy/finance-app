@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'styles/confirm_transfer.css' %}">
+
+<div class="confirm-transfer-form-container">
+    <form method="POST" action="" id="confirm-transfer-form">
+        {% csrf_token %}
+        <small>account number:</small>
+        <h3>{{action.receiver_account.account_number}}</h3>
+
+        <small>amount to send:</small>
+        <h3>{{action.amount}}</h3>
+
+        <small>receiver name:</small>
+        <h3>{{action.receiver_account}}</h3>
+
+        <input type="password" class="password-field" name="password" placeholder="input password...">
+
+        <div class="action-btns">
+            <a href="{% url 'go_back' action.id %}" class="back-btn">
+                <button type="button">Go back</button>
+            </a>
+            <input type="submit" value="Confirm" class="confirm-transfer-btn">
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

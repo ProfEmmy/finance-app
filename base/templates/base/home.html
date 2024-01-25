@@ -1,0 +1,61 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'styles/home_styles.css' %}">
+
+<div class="finance-div">
+    <div class="finance-innerdiv">
+        <a href="{% url 'add-money' %}" class="add-link">
+            <button class="add-btn">
+                Add
+                <br>
+                <img src="{% static 'images/plus-solid.svg' %}" alt="">
+            </button>
+        </a>
+        <a href="{% url 'transfer' account.id %}" class="transfer-link">
+            <button class="transfer-btn">
+                Transfer
+                <br>
+                <img src="{% static 'images/trasfer-icon.png' %}" alt="">
+            </button>
+        </a>
+        <a href="" class="withdraw-link">
+            <button class="withdraw-btn">
+                Withdraw
+                <br>
+                <img src="{% static 'images/withdraw-image.png' %}" alt="">
+            </button>
+        </a>
+    </div>
+</div>
+
+<div class="account-history-div">
+    <div class="account-history-innerdiv">
+        <div class="history-header-div">
+            <h4 class="history-header">History</h4>
+            <a href="{% url 'transaction-history' %}" class="all-history-link">
+                <small>all</small>
+            </a>
+        </div>
+        {% for action in actions %}
+        {% if action.account.user == request.user %}
+        <small class="transaction_created">{{action.created}}</small>
+        <h3 class="transaction">{{action.amount}} {{action.transaction_type}}ed to
+            {{action.receiver_account}}</h3>
+        <hr>
+        {% endif %}
+
+        {% if action.receiver_account.user == request.user %}
+        <small class="transaction_created">{{action.created}}</small>
+        <h3 class="transaction">{{action.amount}} received from
+            {{action.account}}</h3>
+        <hr>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

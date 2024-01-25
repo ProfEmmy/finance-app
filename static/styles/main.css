@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ddd;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-container {
+    background-color: #fff;
+    width: 35%;
+    height: 88vh;
+    border-radius: 20px;
+    box-shadow: 0 0 10px hsl(0, 0%, 0%, .4);
+}
+
+.account-info-div {
+    width: 100%;
+    height: 32%;
+    background-color: rgb(8, 184, 8);
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    color: hsl(0, 0%, 0%, .8);
+    display: flex;
+    justify-content: center;
+    font-family: 'Agbalumo';
+}
+
+.account-info-innerdiv {
+    width: 84%;
+    padding-top: 10px;
+}
+
+.head {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 100%;
+}
+
+.dropdown-overlay {
+    background-color: #000;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+.dropdown {
+    margin-top: -7px;
+    margin-left: 18%;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 5px;
+    border-right: 10px solid #fff;
+    border-top: 10px solid rgba(8, 184, 8);
+    box-shadow: 6px 10px 10px hsl(0, 0%, 0%, .3);
+}
+
+.dropdown-div {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dropdown-innerdiv {
+    display: block;
+    width: 82%;
+    margin-top: 7px;
+    margin-bottom: 15px;
+}
+
+.dropdown-innerdiv>a {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.logout-div {
+    width: 160px;
+    text-align: center;
+}
+
+.logout-link {
+    text-decoration: none;
+    color: red;
+}
+
+.salutation-txt {
+    font-weight: 300;
+    font-size: 1.1em;
+}
+
+.balance {
+    font-weight: 400;
+    font-size: 2.1em;
+    letter-spacing: 2px;
+    margin-top: -10px;
+}
+
+.profile-img {
+    width: 20px;
+    justify-self: right;
+    margin-top: 18px;
+    cursor: pointer;
+}
+
+.balance-label {
+    margin-bottom: 0;
+}
+
+.balance-div {
+    margin-top: 7px;
+}
+
+.balance-innerdiv {
+    display: flex;
+}
+
+.view-icon {
+    width: 15px;
+    margin-top: -30px;
+    margin-left: 5px;
+}
+
+.display {
+    display: none;
+}

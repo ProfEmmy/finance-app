@@ -1,0 +1,50 @@
+.confirm-transfer-form-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 30px;
+}
+
+#confirm-transfer-form {
+    width: 85%;
+}
+
+#confirm-transfer-form>h3 {
+    margin-top: 0;
+}
+
+.back-btn {
+    text-decoration: none;
+}
+
+.password-field {
+    width: 98%;
+    height: 40px;
+    text-align: center;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.back-btn>button {
+    width: 47%;
+    height: 45px;
+    margin-right: 20px;
+    background-color: red;
+    color: black;
+    border: 0;
+    font-weight: 800;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.confirm-transfer-btn {
+    width: 47%;
+    height: 45px;
+    color: #fff;
+    background-color: #06b906;
+    border: 0;
+    font-weight: 800;
+    border-radius: 5px;
+    cursor: pointer;
+}
