@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-(j@_b1sqnklggco66thk5b)fp)_odk^j0dgi5@*-(fk+rr_&4m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1']
+ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', 'fridgepal.onrender.com']
 
 
 # Application definition
