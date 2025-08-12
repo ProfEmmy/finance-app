@@ -132,3 +132,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://finance-app-kri6.onrender.com/"
+]
